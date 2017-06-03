@@ -1,18 +1,20 @@
 $(function () {
-    $.ajax("https://www.suckmycomputerstick.com/", {
-        crossDomain: true,
-        dataType: 'jsonp',
-        xhrFields: {
-            withCredentials: true
-        },
-        statusCode: {
-            404: function () {
-                alert("Not Working")
+    $('button').click(function () {
+        var input = $('websiteinput').val()
+        $.ajax(input, {
+            crossDomain: true,
+            dataType: 'jsonp',
+            xhrFields: {
+                withCredentials: true
             },
-            200: function () {
-                alert("Working");
+            statusCode: {
+                404: function () {
+                    console.log("Not Working")
+                },
+                200: function () {
+                    console.log("Working")
+                }
             }
-        }
+        })
     })
-
 });
