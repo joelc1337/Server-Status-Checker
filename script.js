@@ -1,6 +1,6 @@
 $(function () {
-    $('button').click(function () {
-        var input = $('websiteinput').val()
+    $('#button').click(function () {
+        var input = $('#websiteInput').val()
         $.ajax(input, {
             crossDomain: true,
             dataType: 'jsonp',
